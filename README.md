@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+Custom Form Project
+Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple React application that uses React Hook Form and Zod to handle form validation with a custom form component. It includes features like field validation, error handling, and form submission.
+Features
 
-Currently, two official plugins are available:
+  Custom Form Component: A reusable form component with validation and error handling.
+  Form Validation: Uses Zod for schema-based validation.
+  Error Handling: Form inputs show error messages when validation fails.
+  Form Submission: Handles form submission and logs the form data to the console.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Used
 
-## Expanding the ESLint configuration
+  React: JavaScript library for building user interfaces.
+  React Hook Form: A library for managing forms in React.
+  Zod: A TypeScript-first schema declaration and validation library.
+  CSS: For styling the form.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Project Structure
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  /src
+  ├── /components
+  │   ├── /CustomForm
+  │   │   ├── CustomForm.tsx       # Main form component
+  │   │   ├── customInput.css      # Styles for the form inputs
+  │   │   └── InputForm.tsx        # Custom input component
+  │   ├── /models
+  │   │   └── /schema
+  │   │       └── CustomForm.ts    # Form schema and types
+  │   ├── /utils
+  │   │   └── messages.ts          # Error message constants
+  ├── App.tsx                       # Main application entry point
+  ├── App.css                       # Styles for the app
+  └── index.tsx                     # Application entry file
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  Clone the repository:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+    git clone https://github.com/your-username/custom-form.git
+
+  Navigate into the project folder:
+
+    cd custom-form
+
+  Install dependencies:
+
+    npm install
+
+  Start the application:
+
+    npm start | bun run dev | pnpm run dev
+
+
+Usage
+
+  1. CustomForm Component: This is the core component where the form is rendered. It uses react-hook-form to manage the form state and Zod for validation.
+  2. InputForm Component: A custom input field component used to render individual input fields within the form.
